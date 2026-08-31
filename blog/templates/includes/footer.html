@@ -1,0 +1,224 @@
+<!-- ================= FOOTER ================= -->
+<footer class="footer-section text-white mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Brand / About -->
+      <div class="col-lg-4 col-md-6">
+        <div class="d-flex align-items-center mb-3">
+          <div class="footer-logo me-2">
+            <i class="bi bi-layers-fill"></i>
+          </div>
+
+          <h4 class="fw-bold mb-0">Django Class Based Views</h4>
+        </div>
+
+        <p class="text-light opacity-75 pe-lg-5">A modern, clean and user-friendly web application built with Django and Bootstrap.</p>
+
+        <!-- Social Icons -->
+        <div class="d-flex gap-2 mt-4">
+          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+
+          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+
+          <a href="#" class="social-icon"><i class="bi bi-github"></i></a>
+
+          <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6">
+        <h6 class="footer-title">Quick Links</h6>
+
+        <ul class="footer-links">
+          <li>
+            <a href="{% url 'blog_app:post_create_view' %}">
+              <i class="bi bi-chevron-right"></i>
+              Create Post
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'blog_app:post_list' %}">
+              <i class="bi bi-chevron-right"></i>
+              Posts
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <hr class="footer-divider" />
+
+    <!-- Bottom -->
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <p class="mb-0 text-light opacity-75">
+          © 2026
+          <span class="text-info fw-semibold">Learn Django</span>
+          . All rights reserved.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
+        <span class="text-light opacity-75">
+          Built with
+          <i class="bi bi-heart-fill text-danger"></i>
+          using Django & Bootstrap
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= FOOTER CSS ================= -->
+<style>
+  /* Footer Background */
+  .footer-section {
+    background: linear-gradient(135deg, #0f172a, #172554, #0f172a);
+  
+    border-top: 1px solid rgba(34, 211, 238, 0.15);
+  }
+  
+  /* Logo */
+  .footer-logo {
+    width: 42px;
+    height: 42px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 12px;
+  
+    background: linear-gradient(135deg, #22d3ee, #06b6d4);
+  
+    color: #0f172a;
+  
+    font-size: 20px;
+  }
+  
+  /* Footer Titles */
+  .footer-title {
+    color: #22d3ee;
+    font-size: 16px;
+    font-weight: 600;
+  
+    margin-bottom: 20px;
+  
+    position: relative;
+  }
+  
+  .footer-title::after {
+    content: '';
+  
+    display: block;
+  
+    width: 30px;
+    height: 2px;
+  
+    background: #22d3ee;
+  
+    margin-top: 8px;
+  
+    border-radius: 10px;
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 11px;
+  }
+  
+  .footer-links a {
+    color: rgba(255, 255, 255, 0.65);
+  
+    text-decoration: none;
+  
+    transition: all 0.3s ease;
+  }
+  
+  .footer-links a i {
+    font-size: 11px;
+    margin-right: 6px;
+    color: #22d3ee;
+  }
+  
+  .footer-links a:hover {
+    color: #22d3ee;
+    padding-left: 5px;
+  }
+  
+  /* Social Icons */
+  .social-icon {
+    width: 38px;
+    height: 38px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 10px;
+  
+    color: #cbd5e1;
+  
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  
+    text-decoration: none;
+  
+    transition: all 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #0f172a;
+  
+    background: #22d3ee;
+  
+    border-color: #22d3ee;
+  
+    transform: translateY(-3px);
+  }
+  
+  /* Contact */
+  .contact-item {
+    display: flex;
+    align-items: center;
+  
+    gap: 12px;
+  
+    color: rgba(255, 255, 255, 0.7);
+  
+    margin-bottom: 14px;
+  }
+  
+  .contact-item i {
+    color: #22d3ee;
+    font-size: 16px;
+    min-width: 18px;
+  }
+  
+  /* Divider */
+  .footer-divider {
+    border-color: rgba(255, 255, 255, 0.12);
+  
+    margin: 35px 0 20px;
+  }
+  
+  /* Mobile */
+  @media (max-width: 991px) {
+    .navbar .btn {
+      margin-top: 10px;
+    }
+  
+    .navbar .d-flex {
+      margin-top: 10px;
+    }
+  }
+</style>

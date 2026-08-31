@@ -1,0 +1,333 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ post.title }} - Post Detail
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid px-3 px-sm-4 px-lg-5 py-4 py-md-5">
+
+  <!-- ========================= -->
+
+  <!-- Page Header -->
+
+  <!-- ========================= -->
+
+  <div class="text-center mb-4 mb-md-5">
+
+
+<div
+  class="d-inline-flex align-items-center justify-content-center
+         bg-primary bg-opacity-10 text-primary rounded-circle mb-3"
+  style="width: 64px; height: 64px;"
+>
+  <i class="bi bi-file-earmark-text fs-3"></i>
+</div>
+
+<h1 class="fw-bold mb-2 fs-3 fs-md-2">
+  Post Details
+</h1>
+
+<p class="text-muted mb-0">
+  View complete information about this post
+</p>
+
+
+  </div>
+
+  <!-- ========================= -->
+
+  <!-- Main Card -->
+
+  <!-- ========================= -->
+
+  <div class="row justify-content-center">
+
+
+<div class="col-12 col-xl-10 col-xxl-9">
+
+  <div class="card border-0 shadow rounded-4 overflow-hidden">
+
+    <div class="card-body p-3 p-sm-4 p-md-5">
+
+
+      <!-- ========================= -->
+      <!-- Post Top Section -->
+      <!-- ========================= -->
+
+      <div class="row g-4 g-lg-5 align-items-start">
+
+
+        <!-- ========================= -->
+        <!-- Post Information -->
+        <!-- ========================= -->
+
+        <div class="col-12 col-lg-7 col-xl-8">
+
+          <!-- Post ID -->
+
+          <div class="d-flex align-items-center gap-2 mb-4">
+
+            <span
+              class="d-inline-flex align-items-center
+                     justify-content-center bg-primary
+                     bg-opacity-10 text-primary rounded-circle"
+              style="width: 40px; height: 40px;"
+            >
+              <i class="bi bi-hash"></i>
+            </span>
+
+            <div>
+
+              <small class="text-muted d-block">
+                Post ID
+              </small>
+
+              <span class="fw-semibold">
+                #{{ post.pk }}
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- Title -->
+
+          <div class="mb-4">
+
+            <small
+              class="text-uppercase text-muted fw-semibold"
+              style="letter-spacing: .5px;"
+            >
+              Title
+            </small>
+
+            <h2
+              class="fw-bold mt-2 mb-0 text-break
+                     fs-3 fs-md-2"
+            >
+              {{ post.title }}
+            </h2>
+
+          </div>
+
+
+          <!-- Category -->
+
+          <div class="mb-4">
+
+            <small
+              class="text-uppercase text-muted fw-semibold"
+              style="letter-spacing: .5px;"
+            >
+              Category
+            </small>
+
+            <div class="mt-2">
+
+              {% if post.catagory %}
+
+                <span
+                  class="badge bg-primary bg-opacity-10
+                         text-primary rounded-pill px-3 py-2
+                         fw-medium"
+                >
+                  <i class="bi bi-tag me-1"></i>
+                  {{ post.catagory }}
+                </span>
+
+              {% else %}
+
+                <span class="text-muted small">
+                  <i class="bi bi-dash-circle me-1"></i>
+                  No category
+                </span>
+
+              {% endif %}
+
+            </div>
+
+          </div>
+
+
+          <!-- Content -->
+
+          <div>
+
+            <small
+              class="text-uppercase text-muted fw-semibold"
+              style="letter-spacing: .5px;"
+            >
+              Content
+            </small>
+
+            <div
+              class="bg-light border rounded-4 p-3 p-sm-4 mt-2"
+            >
+
+              <p
+                class="mb-0 text-secondary text-break"
+                style="
+                  line-height: 1.9;
+                  white-space: pre-line;
+                "
+              >
+                {{ post.content }}
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ========================= -->
+        <!-- Image Section -->
+        <!-- ========================= -->
+
+        <div class="col-12 col-lg-5 col-xl-4">
+
+          <div class="text-center">
+
+            <small
+              class="text-uppercase text-muted fw-semibold"
+              style="letter-spacing: .5px;"
+            >
+              Post Image
+            </small>
+
+
+            {% if post.image %}
+
+              <div
+                class="mt-2 bg-light border rounded-4 p-2
+                       overflow-hidden"
+              >
+
+                <img
+                  src="{{ post.image.url }}"
+                  alt="{{ post.title }}"
+                  class="img-fluid rounded-3 w-100"
+                  style="
+                    max-height: 420px;
+                    min-height: 220px;
+                    object-fit: cover;
+                  "
+                >
+
+              </div>
+
+            {% else %}
+
+              <div
+                class="mt-2 bg-light border rounded-4
+                       d-flex flex-column
+                       align-items-center
+                       justify-content-center"
+                style="min-height: 280px;"
+              >
+
+                <div
+                  class="d-flex align-items-center
+                         justify-content-center
+                         bg-white shadow-sm rounded-circle mb-3"
+                  style="width: 75px; height: 75px;"
+                >
+                  <i class="bi bi-image fs-2 text-secondary"></i>
+                </div>
+
+                <p class="text-muted mb-0">
+                  No Image Available
+                </p>
+
+              </div>
+
+            {% endif %}
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ========================= -->
+      <!-- Divider -->
+      <!-- ========================= -->
+
+      <hr class="my-4 my-md-5">
+
+
+      <!-- ========================= -->
+      <!-- Action Buttons -->
+      <!-- ========================= -->
+
+      <div
+        class="d-flex flex-column flex-md-row
+               justify-content-between
+               align-items-stretch
+               align-items-md-center
+               gap-3"
+      >
+
+
+        <!-- Back -->
+
+        <a
+          href="{% url 'blog_app:post_list_view' %}"
+          class="btn btn-outline-secondary
+                 rounded-pill px-4 py-2"
+        >
+          <i class="bi bi-arrow-left me-1"></i>
+          Back to Posts
+        </a>
+
+
+        <!-- Right Actions -->
+
+        <div
+          class="d-flex flex-column flex-sm-row gap-2"
+        >
+
+          <!-- Edit -->
+
+          <a
+            href="{% url 'blog_app:post_update_view' post.pk %}"
+            class="btn btn-warning rounded-pill
+                   px-4 py-2"
+          >
+            <i class="bi bi-pencil-square me-1"></i>
+            Edit Post
+          </a>
+
+
+          <!-- Delete -->
+
+          <a
+            href="{% url 'blog_app:post_delete_view' post.pk %}"
+            class="btn btn-danger rounded-pill
+                   px-4 py-2"
+          >
+            <i class="bi bi-trash me-1"></i>
+            Delete
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>
+
+{% endblock %}
