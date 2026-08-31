@@ -1,4 +1,4 @@
-# 📝 Django Blog Post Manager
+#  Django Blog Post Manager with CBV's
 
 A modern and responsive **Blog Post Management System** built with **Python and Django** using **Class-Based Views (CBVs)**.
 
